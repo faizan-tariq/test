@@ -1,20 +1,37 @@
 pipeline {
     agent any
-
+    
+    tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
+    
     stages {
-        stage('Build') {
+        stage ('init') {
             steps {
-                echo 'Building..'
+                 RUN /phx-ci-init.sh 
+                }
+            }        
+    
+    
+        stage('build') {
+            steps {
+                 RUN /phx-ci-build.sh 
             }
         }
-        stage('Test') {
+        stage('test') {
             steps {
-                echo 'Testing..'
+                RUN /phx-ci-test.sh 
             }
         }
-        stage('Deploy') {
+        stage('scan') {
             steps {
-                echo 'Deploying....'
+                RUN /phx-ci-scan.sh 
+            }
+        }
+        stage('deploy') {
+            steps {
+                RUN /phx-ci-deploy.sh 
             }
         }
     }
