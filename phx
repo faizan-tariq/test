@@ -3,7 +3,9 @@ pipeline {
     
     stages {
         stage ('init') {
+             steps {
                  sh ./phx-ci-init.sh
+               }
             }        
         
     }
