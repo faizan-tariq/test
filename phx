@@ -9,29 +9,29 @@ pipeline {
     stages {
         stage ('init') {
             steps {
-                 RUN /phx-ci-init.sh 
+                 sh('./phx-ci-init.sh')
                 }
             }        
     
     
         stage('build') {
             steps {
-                 RUN /phx-ci-build.sh 
+                 sh('./phx-ci-build.sh') 
             }
         }
         stage('test') {
             steps {
-                RUN /phx-ci-test.sh 
+                sh('./phx-ci-test.sh') 
             }
         }
         stage('scan') {
             steps {
-                RUN /phx-ci-scan.sh 
+                sh('./phx-ci-scan.sh') 
             }
         }
         stage('deploy') {
             steps {
-                RUN /phx-ci-deploy.sh 
+                sh('./phx-ci-deploy.sh') 
             }
         }
     }
