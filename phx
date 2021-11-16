@@ -11,22 +11,22 @@ pipeline {
     
         stage('build') {
             steps {
-                 sh('./phx-ci-build.sh') 
+                 sh ./phx-ci-build.sh
             }
         }
         stage('test') {
             steps {
-                sh('./phx-ci-test.sh') 
+                sh ./phx-ci-test.sh
             }
         }
         stage('scan') {
             steps {
-                sh('./phx-ci-scan.sh') 
+                sh ./phx-ci-scan.sh
             }
         }
         stage('deploy') {
             steps {
-                sh('./phx-ci-deploy.sh') 
+                sh ./phx-ci-deploy.sh
             }
         }
     }
