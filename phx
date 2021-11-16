@@ -3,27 +3,28 @@ pipeline {
     
     stages {
         stage ('init') {
-                echo "************** phx-ci-init **************"
-                echo "123"
-            }
+            steps {
+              echo "************** phx-ci-init **************"
+           }
+        }
         stage('build') {
             steps {
-                 sh './phx-ci-build.sh'
+              echo "************** phx-ci-build **************"
             }
         }
         stage('test') {
             steps {
-                sh './phx-ci-test.sh'
+              echo "************** phx-ci-test **************"
             }
         }
         stage('scan') {
             steps {
-                sh './phx-ci-scan.sh'
+              echo "************** phx-ci-scan **************"
             }
         }
         stage('deploy') {
             steps {
-                sh './phx-ci-deploy.sh'
+              echo "************** phx-ci-deploy **************"
             }
         }
     
