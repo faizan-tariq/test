@@ -3,10 +3,8 @@ pipeline {
     
     stages {
         stage ('init') {
-             steps {
-                 sh 'whoami'
-                 sh './phx-ci-init.sh'
-               }
+                echo "************** phx-ci-init **************"
+                echo "123"
             }
         stage('build') {
             steps {
