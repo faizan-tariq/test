@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('init') {
              steps {
-                 sh "chmod +x -R ${env.WORKSPACE}"
+                 sh 'whoami'
                  sh './phx-ci-init.sh'
                }
             }
